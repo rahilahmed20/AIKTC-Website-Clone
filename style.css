@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Raleway:wght@200;300;400;500;600&family=Roboto+Condensed:wght@300;400;700&display=swap");
 
 *,
 *::before,
@@ -21,6 +21,7 @@
   --grey: #aaaaaa;
 }
 
+/* 1st navbar */
 .nav1 {
   background-color: var(--dark-blue);
   display: flex;
@@ -83,6 +84,7 @@
   line-height: 2;
 }
 
+/* 2nd navbar */
 .nav2 {
   background-color: var(--light-black);
 }
@@ -139,25 +141,221 @@
   background-color: var(--dark-yellow);
 }
 
+/* what's new section */
+.whats-new-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
 
+.whats-new-content {
+  width: 90%;
+  display: flex;
+  gap: 50px;
+}
 
+.new-features {
+  width: 70%;
+  background-color: var(--dark-yellow);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 10px 20px;
+}
 
+.new-features div {
+  background-color: var(--white);
+  padding: 20px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
 
+.new-features div a {
+  color: var(--dark-blue);
+}
 
+#new-feature-heading {
+  background-color: var(--dark-yellow);
+  font-size: 20px;
+}
 
+.btn {
+  position: relative;
+  background-color: var(--dark-blue);
+  color: var(--dark-yellow);
+  text-transform: uppercase;
+  width: 50%;
+  padding: 10px;
+  border: none;
+  font-weight: bolder;
+  z-index: 1;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: all 1s;
+}
 
+.btn::before {
+  content: "";
+  position: absolute;
+  background-color: var(--white);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transform: scaleX(0);
+  z-index: -1;
+  transform-origin: left;
+  transition: all 1s;
+}
 
+.btn:hover::before {
+  transform: scaleX(1);
+}
 
+.btn:hover {
+  color: var(--dark-blue);
+}
 
+.whats-new-image {
+  position: relative;
+}
 
+.whats-new-image img {
+  width: 100%;
+  height: 100%;
+}
 
+.fa-chevron-right {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 18px;
+  color: #f0f0f0;
+  cursor: pointer;
+}
 
+.fa-chevron-left {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 18px;
+  font-size: 20px;
+  color: #f0f0f0;
+  cursor: pointer;
+}
 
+/* notice section */
+.notice-section {
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.notice-section p {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: var(--dark-blue);
+  margin-bottom: 20px;
+}
 
+.notice-table {
+  width: 90%;
+  border-collapse: collapse;
+}
 
+.notice-table thead {
+  background-color: var(--light-black);
+  color: var(--white);
+}
 
+.notice-table th {
+  padding: 20px;
+  border: 1px solid white;
+}
 
+.notice-table td {
+  padding: 20px 15px;
+  border: 1px solid #a9a9a9;
+  text-align: center;
+  color: var(--dark-blue);
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
 
+.notice-table button {
+  background-color: var(--light-black);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-decoration: underline;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 15px;
+}
 
+/* footer */
+.footer-1 {
+  margin-top: 30px;
+  padding: 60px 0;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: center;
+}
 
+.footer-links {
+  width: 88%;
+  color: var(--white);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.footer-links h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-links li {
+  list-style: none;
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  display: flex;
+  gap: 12px;
+}
+
+.footer-links i {
+  color: var(--dark-yellow);
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.5s;
+}
+
+.footer-links a:hover {
+  color: var(--dark-yellow);
+}
+
+.footer-2 {
+  background-color: var(--light-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.footer-2-content {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--dark-yellow);
+  font-family: "Raleway", sans-serif;
+}
