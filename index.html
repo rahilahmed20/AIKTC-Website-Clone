@@ -330,7 +330,7 @@
             </div>
           </div>
           <div class="form">
-            <form action="">
+            <form>
               <div>
                 <h3>Payment Details</h3>
                 <div class="blue-line" style="margin: 20px 0"></div>
@@ -339,7 +339,13 @@
                     <label for="amount">Amount</label>
                   </div>
                   <div class="form-input">
-                    <input type="text" id="amount" placeholder="Enter Amount" />
+                    <input
+                      onchange="update_amount()"
+                      required
+                      type="number"
+                      id="amount"
+                      placeholder="Enter Amount"
+                    />
                   </div>
                 </div>
 
@@ -348,7 +354,7 @@
                     <label for="rollno">Roll Number</label>
                   </div>
                   <div class="form-input">
-                    <input type="text" id="rollno" />
+                    <input required type="text" id="rollno" />
                   </div>
                 </div>
 
@@ -356,8 +362,8 @@
                   <div class="form-label">
                     <label for="name">Name of the Student</label>
                   </div>
-                  <div class="form-input">
-                    <input type="name" id="name" />
+                  <div class="form-input required">
+                    <input required type="name" id="name" />
                     <p>Ex: Name & Roll No.</p>
                   </div>
                 </div>
@@ -368,11 +374,12 @@
                   </div>
                   <div>
                     <select
+                      required
                       name="department"
                       id="department"
                       class="form-select"
                     >
-                      <option style="display: none">--Select--</option>
+                      <option value="none">None</option>
                       <option value="civil">Civil Engineering</option>
                       <option value="computer">Computer Engineering</option>
                       <option value="electrical">Electrical Engineering</option>
@@ -393,7 +400,7 @@
                     <label for="mobile">Mobile Number</label>
                   </div>
                   <div class="form-input">
-                    <input type="tel" id="mobile" />
+                    <input required type="number" id="mobile" />
                   </div>
                 </div>
 
@@ -402,7 +409,7 @@
                     <label for="email">Email Id</label>
                   </div>
                   <div class="form-input">
-                    <input type="email" id="email" />
+                    <input required type="email" id="email" />
                     <p>Ex: 20ce60@aiktc.ac.in</p>
                   </div>
                 </div>
@@ -412,8 +419,13 @@
                     <label for="feesFor">Fees For</label>
                   </div>
                   <div>
-                    <select name="feesFor" id="feesFor" class="form-select">
-                      <option style="display: none">--Select--</option>
+                    <select
+                      required
+                      name="feesFor"
+                      id="feesFor"
+                      class="form-select"
+                    >
+                      <option value="none">None</option>
                       <option value="tuition">Tuition Fees</option>
                       <option value="atkt">Exam Fees ATKT</option>
                       <option value="bonafide">Bonafide Certificate</option>
@@ -437,8 +449,9 @@
                     src="https://cdn.razorpay.com/static/assets/pay_methods_branding.png"
                   />
                 </div>
-                <button>Pay ₹ 0.00</button>
+                <button class="payment_submit_btn">Pay ₹ 0.00</button>
               </div>
+              <div id="toastContainer"></div>
             </form>
           </div>
         </div>
@@ -542,5 +555,6 @@
         </div>
       </footer>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
