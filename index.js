@@ -3,13 +3,25 @@ const name = document.querySelector("#name");
 const form = document.querySelector("form");
 const mobile = document.getElementById("mobile");
 const payment_submit_btn = document.querySelector(".payment_submit_btn")
+const formData = {};
 
+// Toast colors
 const green = "#4caf50";
 const red = "#EA3C53";
 
 function update_amount() {
     let cost = amountInput.value;
     payment_submit_btn.innerText = "Pay ₹ " + cost;
+}
+
+function getFormData() {
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach((input) => { formData[input.id] = input.value });
+
+    const selects = document.querySelectorAll("select");
+    selects.forEach((select) => { formData[select.id] = select.value });
+
+    console.log(formData);
 }
 
 function showToast(message, color) {
@@ -45,5 +57,6 @@ form.addEventListener('submit', (event) => {
     }
     else {
         showToast('Payment Done Successfully!', green);
+        getFormData();
     }
 })
